@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Mobile stacks the brand and form; desktop becomes a wide split layout.
+.auth-page { min-height: 100vh; background: $forest-950; }
+.brand-panel { min-height: 300px; display: flex; flex-direction: column; padding: 24px 20px 30px; position: relative; overflow: hidden; background: radial-gradient(circle at 72% 23%, rgba($gold-300, .16), transparent 18%), linear-gradient(145deg, #142e23, $forest-950); }
+.brand-panel::before { content: ""; width: 420px; aspect-ratio: 1; position: absolute; right: -170px; bottom: -255px; border: 1px solid rgba($gold-300, .17); border-radius: 50%; box-shadow: 0 0 0 45px rgba($gold-300, .025), 0 0 0 90px rgba($gold-300, .02); }
+.brand-panel > * { z-index: 1; }
+.brand { color: $gold-300; font-family: $display; }
+.brand-panel > div { margin-top: auto; }
+.brand-panel h1 { margin-bottom: 14px; font-size: clamp(2.5rem, 11vw, 5.6rem); }
+.brand-panel h1 em { color: $gold-300; font-weight: 400; }
+.brand-panel > div > p:last-child { max-width: 560px; margin: 0; color: rgba($parchment-300, .75); font-family: $display; font-size: 1.05rem; }
+.brand-panel > small { display: none; margin-top: auto; color: rgba($parchment-300, .45); text-transform: uppercase; }
+.auth-panel { @include parchment; display: grid; align-items: center; padding: 42px 20px 60px; }
+.auth-card { width: min(100%, 480px); margin: auto; }
+.auth-card h2 { margin-bottom: 8px; color: $forest-900; }
+.auth-card > p:not(.eyebrow, .privacy-note) { color: #667068; }
+.auth-tabs { display: grid; grid-template-columns: 1fr 1fr; margin: 28px 0 22px; border-bottom: 1px solid #cfc2a1; }
+.auth-tabs button { min-height: 46px; color: #72786f; background: transparent; border: 0; border-bottom: 2px solid transparent; font-weight: 800; text-transform: uppercase; }
+.auth-tabs button.active { color: $forest-900; border-color: $gold-600; }
+.privacy-note { margin: 22px 0 0; color: #70776f; font-size: .72rem; }

@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as *;
+
+// Tablet layouts gain room while remaining touch-first.
+@media (min-width: 600px) {
+  .brand-panel, .auth-panel { padding-inline: 36px; }
+  .grid-deck { grid-template-columns: repeat(10, 1fr); }
+  .reading-slots { gap: 22px; }
+  .page-heading > strong { display: block; }
+  .topic-modal { padding: 48px 45px 32px; }
+  .reading-scroll { padding: 95px 42px 42px; }
+  .insight-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+// Desktop introduces the split auth screen, full header, and card arc.
+@media (min-width: 900px) {
+  .auth-page { display: grid; grid-template-columns: minmax(0, 58fr) minmax(440px, 42fr); }
+  .brand-panel { min-height: 100vh; padding: 36px clamp(40px, 7vw, 90px) 45px; }
+  .brand-panel > div { margin: auto 0; }
+  .brand-panel > small { display: block; }
+  .auth-panel { min-height: 100vh; padding: 60px clamp(36px, 5vw, 80px); }
+  .site-header { height: 74px; grid-template-columns: 1fr auto 1fr; padding: 0 clamp(28px, 5vw, 72px); }
+  .site-header nav { height: auto; position: static; gap: 28px; background: transparent; border: 0; }
+  .site-header nav button { min-height: 44px; min-width: auto; padding: 0; }
+  .site-header nav button.active { border-top: 0; border-bottom: 1px solid $gold-300; }
+  .profile { justify-content: flex-end; }
+  .profile > span:nth-child(2) { display: inline; }
+  .dashboard, .summary-page, .content-page { min-height: calc(100vh - 74px); padding-bottom: 70px; }
+  .reading-slot > button, .empty-card { max-width: 190px; }
+  .summary-cards article > span { font-size: .62rem; }
+  .toast { bottom: 25px; }
+}
+
+// The full arc appears only when there is enough width for large, usable cards.
+@media (min-width: 1180px) {
+  .arc-deck { height: 290px; display: block; position: relative; margin-top: 8px; overflow: visible; }
+  .arc-deck .deck-card { width: 88px; min-width: 88px; aspect-ratio: 2 / 3; position: absolute; bottom: 85px; left: 50%; transform-origin: 50% 220%; transform: translateX(calc(var(--x) - 44px)) translateY(var(--y)) rotate(var(--angle)); z-index: var(--z); }
+  .arc-deck .deck-card:not(:disabled):hover, .arc-deck .deck-card:not(:disabled):focus-visible { z-index: 100; filter: drop-shadow(0 15px 10px rgba(0, 0, 0, .55)); transform: translateX(calc(var(--x) - 44px)) translateY(calc(var(--y) - 46px)) rotate(var(--angle)) scale(1.08); }
+  .grid-deck { display: none; }
+  .force-grid .arc-deck { display: none; }
+  .force-grid .grid-deck { display: grid; grid-template-columns: repeat(13, 1fr); }
+}
+
+@media (max-width: 390px) { .grid-deck { grid-template-columns: repeat(5, 1fr); } .page-heading h1 { font-size: 2.25rem; } }

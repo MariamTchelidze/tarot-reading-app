@@ -1,0 +1,9 @@
+@use "../abstracts/variables" as *;
+
+// Buttons share accessible dimensions while preserving visual hierarchy.
+.button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; padding: .8rem 1.35rem; border: 1px solid transparent; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; transition: transform .2s, background .2s; }
+.button:hover { transform: translateY(-2px); }
+.button:disabled { cursor: wait; opacity: .6; }
+.button.primary { color: $forest-950; background: linear-gradient(135deg, $gold-300, $gold-500); border-color: $gold-300; }
+.button.secondary { color: $parchment-100; background: rgba($forest-700, .5); border-color: rgba($gold-500, .4); }
+.page-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin: 30px auto 0; }

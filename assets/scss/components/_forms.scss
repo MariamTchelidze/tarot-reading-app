@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+
+// Labels remain visible, and every field meets the minimum touch target.
+.form-stack, .settings-card { display: grid; gap: 18px; }
+.form-stack label, .settings-card label { display: grid; gap: 7px; color: #46524b; font-size: .75rem; font-weight: 800; }
+input, select { width: 100%; min-height: 48px; padding: .75rem .9rem; color: $ink; background: rgba(255, 255, 255, .55); border: 1px solid #bdb293; }
+.password-wrap { display: grid; grid-template-columns: 1fr auto; }
+.password-wrap input { grid-area: 1 / 1 / 2 / 3; padding-right: 70px; }
+.password-wrap button { grid-area: 1 / 2; z-index: 1; padding: 0 13px; color: $forest-700; background: transparent; border: 0; }
+.avatar-picker { display: flex; gap: 9px; margin: 0; padding: 0; border: 0; }
+.avatar-picker legend { width: 100%; margin-bottom: 7px; color: #46524b; font-size: .75rem; font-weight: 800; }
+.avatar-picker label { display: block; }
+.avatar-picker input { position: absolute; opacity: 0; }
+.avatar-picker span { width: 46px; height: 46px; display: grid; place-content: center; color: $forest-900; border: 1px solid #bdb293; border-radius: 50%; font-size: 1.2rem; }
+.avatar-picker input:checked + span { color: $gold-600; background: rgba($gold-500, .15); border: 2px solid $gold-600; }
+.form-message { padding: 12px 14px; color: #722e27; background: rgba($danger, .15); border-left: 3px solid $danger; font-size: .85rem; }
+.check { grid-template-columns: auto 1fr; align-items: center; }
+.check input { width: 20px; min-height: 20px; }
+.check small { grid-column: 2; font-weight: 400; }

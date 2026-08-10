@@ -1,0 +1,9 @@
+@use "../abstracts/variables" as *;
+
+// Serif headings establish atmosphere; body text remains highly readable.
+h1, h2 { font-family: $display; font-weight: 500; line-height: 1.05; }
+h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); }
+h2 { font-size: clamp(1.6rem, 5vw, 2.8rem); }
+.eyebrow { margin-bottom: .7rem; color: $gold-300; font-size: .7rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+.text-button { min-height: 44px; padding: .5rem .2rem; color: $gold-300; background: transparent; border: 0; border-bottom: 1px solid rgba($gold-300, .35); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.danger { color: $danger; }

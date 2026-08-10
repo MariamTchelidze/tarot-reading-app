@@ -1,0 +1,6 @@
+// Motion is restrained and disappears when the user requests reduced motion.
+@keyframes pulse { 50% { opacity: .45; transform: scale(.92); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes glow { 50% { box-shadow: 0 14px 45px rgba(224, 200, 120, .25); transform: translateY(-4px); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+html[data-motion="reduce"] *, html[data-motion="reduce"] *::before, html[data-motion="reduce"] *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

@@ -1,12 +1,28 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Middle Earth Tarot Reading</title>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A private, local-first three-card tarot journey.">
+    <meta name="theme-color" content="#07140f">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <title>Middle-earth Tarot Reading</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
   </head>
   <body>
-    <script src="scripts/app.js"></script>
+    <!-- JavaScript replaces this accessible loading state with the current view. -->
+    <main id="app" class="app" aria-live="off">
+      <div class="boot" role="status">
+        <span aria-hidden="true">✦</span>
+        <p>Opening your chronicle…</p>
+      </div>
+    </main>
+
+    <noscript>
+      <p class="noscript">Please enable JavaScript to shuffle and reveal your tarot cards.</p>
+    </noscript>
+
+    <!-- Every JavaScript module enters through this one file. -->
+    <script type="module" src="scripts/main.js"></script>
   </body>
 </html>

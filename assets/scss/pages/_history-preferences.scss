@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// History and settings use focused, readable content panels.
+.history-list, .settings-card, .data-card, .empty-state { @include container(850px); }
+.history-list { display: grid; gap: 10px; }
+.history-item { display: grid; grid-template-columns: 1fr 54px; background: rgba($forest-700, .52); border: 1px solid rgba($gold-500, .22); }
+.history-item > button:first-child { min-width: 0; padding: 20px 18px; background: transparent; border: 0; text-align: left; }
+.history-item > button:first-child > span { display: flex; flex-wrap: wrap; gap: 10px; }
+.history-item time { color: rgba($parchment-300, .5); font-size: .62rem; }
+.history-item em { padding: 2px 8px; color: $gold-300; background: rgba($gold-500, .12); border-radius: 20px; font-size: .58rem; font-style: normal; text-transform: uppercase; }
+.history-item h2 { margin: 10px 0 5px; font-size: 1.3rem; }
+.history-item p { margin: 0; overflow: hidden; color: rgba($parchment-300, .58); font-family: $display; text-overflow: ellipsis; white-space: nowrap; }
+.delete { background: transparent; border: 0; border-left: 1px solid rgba($gold-500, .14); color: rgba($parchment-300, .4); font-size: 1.5rem; }
+.history-list + .danger { display: block; margin: 28px auto; }
+.empty-state { padding: 45px 20px; text-align: center; border: 1px dashed rgba($gold-500, .3); }
+.empty-state > span { color: $gold-300; font-size: 2rem; }
+.settings-card, .data-card { @include parchment; max-width: 680px; padding: 25px 20px; border: 1px solid rgba($gold-500, .6); }
+.data-card { margin-top: 22px; }
+.data-card h2 { color: $forest-900; font-size: 1.5rem; }
+.data-card p { color: #5e695f; }
+.data-card > div { display: flex; flex-wrap: wrap; gap: 14px; }
+.data-card .secondary { color: $forest-900; background: transparent; border-color: $gold-600; }
+.toast { min-width: min(300px, calc(100% - 32px)); position: fixed; z-index: 150; left: 50%; bottom: 78px; padding: 12px 18px; pointer-events: none; color: $ink; background: $parchment-100; border: 1px solid $gold-600; opacity: 0; transform: translate(-50%, 15px); text-align: center; transition: .25s; }
+.toast.visible { opacity: 1; transform: translate(-50%, 0); }

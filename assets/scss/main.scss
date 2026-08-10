@@ -1,0 +1,16 @@
+// Every SCSS partial enters the build through this single file.
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "base/reset";
+@use "base/typography";
+@use "components/buttons";
+@use "components/forms";
+@use "components/cards";
+@use "components/modal";
+@use "layout/auth";
+@use "layout/header";
+@use "layout/dashboard";
+@use "pages/summary";
+@use "pages/history-preferences";
+@use "utilities/animations";
+@use "utilities/responsive";

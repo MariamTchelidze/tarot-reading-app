@@ -1,0 +1,10 @@
+@use "variables" as *;
+
+// Center page content while retaining mobile side padding.
+@mixin container($width: 1120px) { width: min(calc(100% - 32px), $width); margin-inline: auto; }
+
+// Reuse the light parchment surface on forms and reading text.
+@mixin parchment { color: $ink; background: linear-gradient(rgba($parchment-100, .97), rgba($parchment-100, .97)), repeating-linear-gradient(8deg, transparent 0 6px, rgba(112, 88, 44, .12) 7px); }
+
+// Keep keyboard focus visible across every control.
+@mixin focus { &:focus-visible { outline: 3px solid $gold-300; outline-offset: 3px; } }

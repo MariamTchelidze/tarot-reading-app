@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+
+// Mobile navigation stays reachable at the bottom of the screen.
+.site-header { height: 66px; display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 0 16px; position: relative; z-index: 20; background: rgba(7, 20, 15, .97); border-bottom: 1px solid rgba($gold-500, .22); }
+.wordmark { min-height: 44px; padding: 0; background: transparent; border: 0; font-family: $display; font-size: .85rem; }
+.wordmark span { color: $gold-300; }
+.site-header nav { height: 58px; display: flex; justify-content: space-around; position: fixed; z-index: 30; left: 0; right: 0; bottom: 0; background: #08150f; border-top: 1px solid rgba($gold-500, .22); }
+.site-header nav button { min-width: 84px; background: transparent; border: 0; color: rgba($parchment-300, .6); font-size: .67rem; font-weight: 700; }
+.site-header nav button.active { color: $gold-300; border-top: 2px solid $gold-300; }
+.profile { display: flex; align-items: center; gap: 8px; }
+.profile > span:nth-child(2) { display: none; }
+.profile .text-button { min-height: 40px; font-size: .55rem; }
+.avatar { width: 36px; height: 36px; display: grid; place-content: center; color: $gold-300; border: 1px solid rgba($gold-500, .5); border-radius: 50%; }

@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// The grid is the mobile default; the immersive arc appears on desktop.
+.dashboard { min-height: calc(100vh - 66px); padding: 32px 0 96px; background: radial-gradient(circle at 50% 0, rgba($forest-700, .72), transparent 34%), $forest-950; }
+.page-heading { @include container; display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; margin-bottom: 28px; }
+.page-heading h1 { margin-bottom: 9px; font-size: clamp(2.5rem, 8vw, 4.8rem); }
+.page-heading > div > p:last-child { max-width: 620px; margin: 0; color: rgba($parchment-300, .65); font-family: $display; }
+.page-heading > strong { display: none; color: $gold-300; font-family: $display; font-size: 2rem; white-space: nowrap; }
+.page-heading > strong span { color: rgba($parchment-300, .45); font-family: $body; font-size: .7rem; text-transform: uppercase; }
+.reading-slots { @include container(940px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.reading-slot { min-width: 0; text-align: center; }
+.reading-slot > p { min-height: 28px; margin-bottom: 7px; color: rgba($gold-300, .75); font-size: .52rem; letter-spacing: .06em; text-transform: uppercase; }
+.reading-slot > button, .empty-card { width: 100%; max-width: 158px; aspect-ratio: 2 / 3; margin: auto; padding: 0; background: transparent; border: 0; }
+.empty-card { display: grid; place-content: center; color: rgba($parchment-300, .3); border: 1px dashed rgba($gold-500, .3); }
+.empty-card span { color: rgba($gold-300, .4); font-size: 1.4rem; }
+.empty-card small { margin-top: 6px; font-size: .46rem; text-transform: uppercase; }
+.reading-slot > button > span { display: block; margin-top: 6px; color: $gold-300; font-size: .62rem; text-transform: uppercase; }
+.revealed-card { cursor: zoom-in; }
+.deck-area { @include container(1380px); overflow: clip; margin-top: 48px; padding-inline: 4px; }
+.deck-title { display: flex; justify-content: center; align-items: center; gap: 12px; color: rgba($gold-300, .5); }
+.deck-title h2 { margin: 0; font-size: .9rem; font-style: italic; font-weight: 400; }
+.arc-deck { display: none; }
+.grid-deck { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-top: 18px; }
+.deck-card { min-width: 44px; padding: 0; background: transparent; border: 0; transition: opacity .2s, transform .2s; }
+.deck-card.chosen { opacity: .08; transform: scale(.9); }
+.deck-footer { display: flex; justify-content: space-between; align-items: center; gap: 14px; position: relative; z-index: 110; margin-top: 28px; padding: 18px 4px 0; border-top: 1px solid rgba($gold-500, .2); }
+.deck-footer p { margin: 0; color: rgba($parchment-300, .45); font-size: .65rem; }
+.topic-reminder { width: min(calc(100% - 32px), 520px); margin: 28px auto 0; text-align: center; }
+.topic-reminder p { color: rgba($parchment-300, .65); font-family: $display; }
+.scan-panel { display: grid; justify-items: center; margin: 55px auto 0; text-align: center; }
+.scan-panel > span { width: 86px; height: 86px; display: grid; place-content: center; color: $gold-300; border: 1px dashed rgba($gold-300, .45); border-radius: 50%; font-size: 2rem; animation: spin 5s linear infinite; }
+.scan-panel p { margin: 18px 0 4px; font-family: $display; font-size: 1.25rem; }
+.scan-panel small { color: rgba($parchment-300, .45); font-size: .58rem; text-transform: uppercase; }
+.scanning .reading-slots { @include container(1060px); gap: clamp(24px, 5vw, 70px); }
+.scanning .reading-slot > button { max-width: 250px; }
+.scanning .reading-slot > p { font-size: .7rem; }
+.scanning .reading-slot .card-face { animation: glow 2s ease-in-out infinite; }

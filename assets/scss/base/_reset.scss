@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// A small reset normalizes layout without hiding semantic HTML.
+*, *::before, *::after { box-sizing: border-box; }
+html { color-scheme: dark; scroll-behavior: smooth; }
+body { min-width: 320px; min-height: 100vh; margin: 0; color: $parchment-100; background: $forest-950; font-family: $body; font-size: 16px; line-height: 1.5; }
+button, input, select { font: inherit; @include focus; }
+button, select { cursor: pointer; }
+button { color: inherit; }
+img { display: block; max-width: 100%; }
+h1, h2, p { margin-top: 0; }
+.app { min-height: 100vh; }
+.sr-only { width: 1px; height: 1px; position: absolute; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.boot { min-height: 100vh; display: grid; place-content: center; justify-items: center; background: radial-gradient(circle, rgba($forest-700, .8), $forest-950 65%); }
+.boot span { color: $gold-300; font-size: 2.5rem; animation: pulse 1.6s infinite; }
+.noscript { padding: 2rem; text-align: center; }
